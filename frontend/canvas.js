@@ -82,10 +82,16 @@ const refresh = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
 
+const renderFullScreenImage = img => {
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+  debugger;
+}
+
 export {
   canvas,
   ctx,
   renderShape,
   refresh,
-  resizeCanvas
+  resizeCanvas,
+  renderFullScreenImage
 };

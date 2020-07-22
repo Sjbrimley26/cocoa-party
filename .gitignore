@@ -3,3 +3,4 @@ node_modules
 uploads/*
 .fake
 .vscode
+public/bundle*
