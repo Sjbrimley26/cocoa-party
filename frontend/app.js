@@ -8,7 +8,7 @@ const chatbox = document.getElementById('chatbox')
 const input = document.getElementById('chat')
 const form = document.getElementById('messenger')
 const upload = document.getElementById('upload')
-const mapSelect = document.getElementById('map-select')
+const mapUpload = document.getElementById('map-upload')
 
 const chat = new Chatbox(chatbox)
 const uploader = new Uploader(upload)
@@ -18,21 +18,25 @@ settings.addEventListener('click', _ => {
 })
 
 form.addEventListener('submit', _ => {
-  const msg = input.value;
+  const msg = input.value
   form.reset()
   chat.send(msg)
 })
 
-mapSelect.addEventListener('click', _ => upload.click())
+mapUpload.addEventListener('click', _ => upload.click())
 
+window.addEventListener('resize', _ => {
+  resizeCanvas()
+  uploader.refresh()
+})
 
 function init () {
-  resizeCanvas();
-  loop();
+  resizeCanvas()
+  loop()
 }
 
 function loop() {
-  requestAnimationFrame(loop);
+  requestAnimationFrame(loop)
 }
 
-init();
+init()

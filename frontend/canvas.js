@@ -84,7 +84,6 @@ const refresh = () => {
 
 const renderFullScreenImage = img => {
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-  debugger;
 }
 
 export {
